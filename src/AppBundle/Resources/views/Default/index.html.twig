@@ -3,7 +3,9 @@
 {% block title %} FestasRS - Início {% endblock %}
 
 {% block body %}
-    <h3>página inicial</h3>
-
+    {{ include('navigation.html.twig', { 'navigation': navigation }) }}
+    <div class="container">
+        <h3>Bem vindos</h3>
+    </div>
 {% endblock %}
 

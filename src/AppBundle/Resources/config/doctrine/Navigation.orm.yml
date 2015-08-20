@@ -12,5 +12,20 @@ AppBundle\Entity\Navigation:
         url:
             type: string
             length: 255
-        description:
-            type: text
+        is_public:
+            type: boolean
+            options:
+                default: 1
+        created_at:
+            type: datetime
+    oneToMany:
+        children:
+            targetEntity: Navigation
+            mappedBy: parent
+    manyToOne:
+        parent:
+            targetEntity: Navigation
+            inversedBy: children
+            joinColumn:
+                onDelete: CASCADE
+            
